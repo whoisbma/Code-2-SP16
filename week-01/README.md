@@ -106,7 +106,7 @@ Run your code either by pushing to your github.io site repository, or running a 
 
 ---- *Due midnight Sunday, 2/7/16* ----
 
-1. **Get your github and your your username.github.io page set up.** Create a subfolder structure in your github.io directory to upload your homeworks to, like* username.github.io/01/index.html*, etc.
+1. **Get your github and your your username.github.io page set up.** Create a subfolder structure in your github.io directory to upload your homeworks to, like *username.github.io/01/index.html*, etc.
 
 2. **If you need an HTML intro, do this: [HTML & CSS intro](https://www.codecademy.com/learn/web)**
 
