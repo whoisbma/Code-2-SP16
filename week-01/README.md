@@ -104,12 +104,17 @@ Run your code either by pushing to your github.io site repository, or running a 
 
 ## Homework 01
 
+---- *Due midnight Sunday, 2/7/16* ----
+
 1. **Get your github and your your username.github.io page set up.** Create a subfolder structure in your github.io directory to upload your homeworks to, like* username.github.io/01/index.html*, etc.
 
 2. **If you need an HTML intro, do this: [HTML & CSS intro](https://www.codecademy.com/learn/web)**
 
 3. **Go back to an old sketch you've done in Processing, and try to convert it to run in P5.js.** Search through the P5.js site for help. There are lots of guides on this very topic.
 
-4. **Upload your p5.js code to your username.github.io/01/ page.**
+4. **Edit this wiki page to add your name and github username and github.io site: [https://github.com/whoisbma/Code-2-SP16/wiki/Usernames](https://github.com/whoisbma/Code-2-SP16/wiki/Usernames)** - this is so I can find you and your code.
 
-5. **Read Eloquent Javascript, Chapter 1** *(I know I said 1-4 in class, there's already enough other stuff to handle, especially if you are doing the HTML intro.)*
+5. **Upload your p5.js code to your username.github.io/01/ page.**
+
+6. **Read Eloquent Javascript, Chapter 1** *(I know I said 1-4 in class, there's already enough other stuff to handle, especially if you are doing the HTML intro.)*
+
