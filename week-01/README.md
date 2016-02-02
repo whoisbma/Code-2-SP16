@@ -110,7 +110,7 @@ Run your code either by pushing to your github.io site repository, or running a 
 
 2. **If you need an HTML intro, do this: [HTML & CSS intro](https://www.codecademy.com/learn/web)**
 
-3. **Go back to an old sketch you've done in Processing, and try to convert it to run in P5.js.** Search through the P5.js site for help. There are lots of guides on this very topic.
+3. **Go back to an old sketch you've done in Processing, and try to convert it to run in P5.js.** Search through the P5.js site for help. There are lots of guides on this very topic. Try a bouncing ball, try arrays, try for loops to make patterns!
 
 4. **Edit this wiki page to add your name and github username and github.io site: [https://github.com/whoisbma/Code-2-SP16/wiki/Usernames](https://github.com/whoisbma/Code-2-SP16/wiki/Usernames)** - this is so I can find you and your code.
 
