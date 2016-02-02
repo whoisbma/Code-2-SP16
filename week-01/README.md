@@ -52,7 +52,7 @@ For more, just google around. Get used to making directories and writing directl
 
 ### Github
 
-Github is a method for "source control" - basically saving snapshots of your work to return to at any time! We'll be using it to turn in homework.
+Github is a method for "source control" - basically saving snapshots of your work to return to at any time! We'll be using it to turn in homework, and also as an easy way to have some simple hosting for publishing to the web.
 
 Easy to get intimidated at first, but for what we're doing, it really isn't so hard! 
 
