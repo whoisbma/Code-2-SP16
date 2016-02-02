@@ -84,7 +84,7 @@ Make sure you have created a <your username>.github.io repository for turning in
 
 [Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
-[MOU, a great markdown editor)](http://25.io/mou/)
+[MOU, a great markdown editor](http://25.io/mou/)
 
 ### P5.js
 
