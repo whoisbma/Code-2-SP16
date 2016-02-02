@@ -6,7 +6,7 @@
 
 **66 5th Ave., Room 005**
 
-**Mondays 12:10-2:50 PM, Spring 2016 **
+**Mondays 12:10-2:50 PM, Spring 2016**
 
 **Bryan Ma**
 
