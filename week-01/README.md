@@ -88,6 +88,8 @@ Make sure you have created a <your username>.github.io repository for turning in
 
 ### P5.js
 
+P5.js is the result of the work of [Lauren McCarthy](http://lauren-mccarthy.com/), an ITP alum who asked the question: "what language would Processing use if it were built now rather than 2001?" The answer is of course, javascript. In comparison, Processing was built on top of Java. Javascript allows us to publish to the web and have people all around the world see our work.
+
 [P5.js home site](http://p5js.org/)
 
 [Downloads - get the complete library, and the p5.js editor](http://p5js.org/download/)
