@@ -1,7 +1,7 @@
 ## Week 02:
 ---
 
-## javascript syntax and objects, basic DOM interaction in p5.js, strings and generative text
+## javascript syntax and objects // strings and generative text
 
 ##### February 8, 2016
 
@@ -120,7 +120,9 @@ On paper, invent an algorithm to create generative text from existing text. No r
 		
 		* Create an algorithm that creates a slightly different effect each time you run it (some randomness here is ok)
 		
-		* Create a [mad libs generator](http://www.projectlabyrinth.com/MadLibs/MadLibGen.php). 
+		* Create a [mad libs generator](http://www.projectlabyrinth.com/MadLibs/MadLibGen.php).
+		
+		* Create an actual [magnetic poetry simulator](http://www.nsftools.com/tips/MagneticPoetry.htm) that generates the words from arbitrary string input.
 		
 		* Have your finished code be a function that takes in a string as input to generate the result.		
 	* Techniques to try:
@@ -129,7 +131,7 @@ On paper, invent an algorithm to create generative text from existing text. No r
 		
 		* Add word *x* after instances of word *y*.
 		
-		* Remove all words that belong to array["\_\_\_", "\_\_\_\_", "_\_\_\_", etc.];
+		* Remove all words that belong to array["\_\_\_\_", "\_\_\_\_", "_\_\_\_", etc.];
 		
 		* Split all words from a given string, re-order according to ...
 		
@@ -139,4 +141,4 @@ On paper, invent an algorithm to create generative text from existing text. No r
 
 2. Read and do exercises from Chapter 2 of [Eloquent Javascript](http://eloquentjavascript.net/02_program_structure.html).
 
-3. If you need practice with p5.js, check out [Daniel Shiffman's excellent series](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA).
+3. If you need practice with p5.js, check out [Daniel Shiffman's excellent video series](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA).
