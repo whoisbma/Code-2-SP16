@@ -36,15 +36,32 @@ What is javascript? What makes it hard for us if we're expecting Java? Java vs. 
 	- **Untyped**: no ints, chars, strings, booleans, floats. All loosey goosey. If you're used to strictly typed languages, this is a pain.
 	- **Interpreted**: each instruction executes directly, without compiling the whole thing to machine language first.
 
-- Executing javascript in the browser
+- Executing javascript in the browser - *command-option-i*
 
 - Objects as *functions* vs. objects as *variables*
 
 - Arrays as dynamic
 
+- "==" vs. "==="
+
 - String methods
+	- .indexOf()
+	- .substring()
+	- .concat()
+	- .split()
+	- .replace()
+	- .slice()
+	- .charAt()
 
+### P5.js and the DOM
 
+- createCanvas
+- createP
+- createDiv
+- createButton()
+- events/callbacks
+
+### Oulipo, DADA, Erasures
 
 ---
 ---
