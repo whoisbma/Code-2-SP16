@@ -118,6 +118,25 @@ On paper, invent an algorithm to create generative text from existing text. No r
 		
 		* Create a re-making of an oulipo or Dada technique.
 		
-		* Make a new one altogether.
+		* Create an algorithm that creates a slightly different effect each time you run it (some randomness here is ok)
+		
+		* Create a [mad libs generator](http://www.projectlabyrinth.com/MadLibs/MadLibGen.php). 
+		
+		* Have your finished code be a function that takes in a string as input to generate the result.		
+	* Techniques to try:
+	
+		* Replace all words *x* with word *y*.
+		
+		* Add word *x* after instances of word *y*.
+		
+		* Remove all words that belong to array["\_\_\_", "\_\_\_\_", "_\_\_\_", etc.];
+		
+		* Split all words from a given string, re-order according to ...
+		
+		* Display text in the canvas in relationship to its appearance in the text. (size? color? orientation?)
+		
+		* Use a very deliberately chosen text source material.
 
-2. Read Chapter 2 of [Eloquent Javascript](http://eloquentjavascript.net/02_program_structure.html).
+2. Read and do exercises from Chapter 2 of [Eloquent Javascript](http://eloquentjavascript.net/02_program_structure.html).
+
+3. If you need practice with p5.js, check out [Daniel Shiffman's excellent series](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA).
