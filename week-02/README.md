@@ -139,6 +139,6 @@ On paper, invent an algorithm to create generative text from existing text. No r
 		
 		* Use a very deliberately chosen text source material.
 
-2. Read and do exercises from Chapter 2 of [Eloquent Javascript](http://eloquentjavascript.net/02_program_structure.html).
+2. Read and do exercises from Chapter 2 of [Eloquent Javascript](http://eloquentjavascript.net/02_program_structure.html), and experiment with Javascript in the in-browser console.
 
 3. If you need practice with p5.js, check out [Daniel Shiffman's excellent video series](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA).
