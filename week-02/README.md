@@ -108,7 +108,7 @@ On paper, invent an algorithm to create generative text from existing text. No r
 
 ## Homework 02
 
----- *Due midnight Sunday, 2/14/16* ----
+---- *NO CLASS 2/15 - Due midnight Sunday, 2/21/16* ----
 
 1. write an algorithm to generate new text from existing text as a single page program in P5. Use [javascript string methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) to realize the algorithm. Use P5’s text methods to display it. No randomness is allowed - every single aspect is predetermined by you. Post to your week 2 page in your github.io.
 
@@ -139,6 +139,6 @@ On paper, invent an algorithm to create generative text from existing text. No r
 		
 		* Use a very deliberately chosen text source material.
 
-2. Read and do exercises from Chapter 2 of [Eloquent Javascript](http://eloquentjavascript.net/02_program_structure.html), and experiment with Javascript in the in-browser console.
+2. Read and do exercises from **Chapter 2 and 3** of [Eloquent Javascript](http://eloquentjavascript.net/02_program_structure.html), and experiment with Javascript in the in-browser console.
 
 3. If you need practice with p5.js, check out [Daniel Shiffman's excellent video series](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA).
