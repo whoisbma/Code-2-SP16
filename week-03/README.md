@@ -35,6 +35,7 @@ function Bubble(x, y) {
   };
 }
 ```
+
 This function defines our "Bubble" object's properties, which includes 3 numbers, a color variable (also technically a number that p5.js handles for us), a display function, and an update function that moves the object. Notice lots of ```.this``` - this is how we tell the program that the x and y belongs to the object and not some outer scope.
 
 Note also that this is more similar to how we've created classes in Processing than creating an object literal in javascript, which is how we did it last week, like:
@@ -75,25 +76,41 @@ For more sophisticated techniques, look up **Javascript prototypes**. [This is a
 
 ### P5.js and the Document-Object-Model (DOM)
 
-*Mostly taken from [https://github.com/processing/p5.js/wiki/Beyond-the-canvas](https://github.com/processing/p5.js/wiki/Beyond-the-canvas) - to adapt*
+*Mostly taken from [https://github.com/processing/p5.js/wiki/Beyond-the-canvas]()https://github.com/processing/p5.js/wiki/Beyond-the-canvas) - to adapt*
 
-CreateCanvas creates an HTML5 Canvas, a special element you can draw graphics into. However, using the p5.dom add-on library, p5.js can also be used to create and interact with HTML elements outside of the graphics canvas.
+CreateCanvas creates an HTML5 Canvas. The Canvas is an **HTML element**, one component that makes up an HTML document. Just like other HTML elements you've seen before, like <body>, <head>, <p>, and <html>, the Canvas is a component that makes up an HTML document or web page - just one specific to HTML5.  
 
-First, you will need to include the p5.dom.js file in your HTML. If you are using the example project it should already be there, you just need to uncomment the line in index.html that links to it. 
+The Canvas is a special element that lets us draw realtime graphics, and is a fairly new feature to HTML. It is analogous to the graphics context (window) that runs when we press play in our traditional Processing sketch, but we aren't limited only to the canvas in p5.js. In fact, we can turn off the canvas entirely with ```noCanvas();``` in setup.
 
-Storing pointers and Calling Methods
+Most importantly though, by using the p5.dom add-on library, p5.js can be used to **create and interact with HTML elements outside of the graphics canvas.**
+
+You will need to include the p5.dom.js file in your HTML. If you are using the example project it should already be there, you just need to uncomment the line in index.html that links to it. 
+
+##### Creating HTML elements
+
+We can create HTML elements basically the same way we create the canvas, with a method call:
+
+```
+createElement('p', 'Some new paragraph element!');
+createElement('h1', 'Some new header element! Very exciting.');
+createP('Creating a paragraph element directly');
+createDiv('Creating a div directly!');
+createImg('http://www.bryan-ma.com/content/404.gif');
+```
+
+##### Storing pointers and calling methods
 
 When you call createCanvas(w, h) you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer or reference. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. 
 
 ```
-canvas = createCanvas(600, 400);
-canvas.position(300, 50);
-canvas.class("lemon");
+canvas = createCanvas(600, 600);
+canvas.position(10, 100);
+canvas.class("myclass");
 ```
 
 There is one important distinction between working with elements on an element level, vs calling methods like rect() or fill() to draw directly into the canvas. When drawing in canvas while the loop is running, you typically need to redraw everything in the scene every frame. For example, if you want a rectangle to continue to appear on the screen, you include the command rect() in draw, which redraws this rectangle many times per second.
 
-However, when you are working with elements, they hold a static state that you can change at any time by calling one of their methods. In the example above, the canvas is positioned at (300, 50) relative to the upper left corner. This method is called only once in setup, after that it stays in position and does not need to be reset every frame.
+However, when you are working with elements, they hold a static state that you can change at any time by calling one of their methods. In the example above, the canvas is positioned at (10, 100) relative to the upper left corner. This method is called only once in setup, after that it stays in position and does not need to be reset every frame.
 
 ##### Using Parent vs. using Position
 
@@ -296,9 +313,18 @@ https://github.com/dhowe/RiTaJS
 
 *BM - show some fun stuff*
 
+
+
+https://medium.com/@neuroecology/punctuation-in-novels-8f316d542ec4#.cksr5jsgi
+
+
+
+
+
+
 ## Homework 03
 
----- *Due midnight Sunday, 2/21/16* ----
+---- *Due midnight Sunday, 2/28/16* ----
 
 1. Use Javascript-style object oriented programming to illustrate the results of an analysis of strings. Establish yourself what the reasoning for analysis is.
 
