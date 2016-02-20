@@ -96,11 +96,12 @@ createElement('h1', 'Some new header element! Very exciting.');
 createP('Creating a paragraph element directly');
 createDiv('Creating a div directly!');
 createImg('http://www.bryan-ma.com/content/404.gif');
+createA('http://www.p5js.org');
 ```
 
 ##### Storing pointers and calling methods
 
-When you call createCanvas(w, h) you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer or reference. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. 
+When you call createCanvas(w, h), you create a graphics canvas to draw into with the specified width and height. However, you can also store the canvas you create in a variable, this is called a pointer or reference. With this pointer we can call methods of the element itself, to set the position, id or class, for instance. 
 
 ```
 canvas = createCanvas(600, 600);
@@ -110,7 +111,18 @@ canvas.class("myclass");
 
 There is one important distinction between working with elements on an element level, vs calling methods like rect() or fill() to draw directly into the canvas. When drawing in canvas while the loop is running, you typically need to redraw everything in the scene every frame. For example, if you want a rectangle to continue to appear on the screen, you include the command rect() in draw, which redraws this rectangle many times per second.
 
-However, when you are working with elements, they hold a static state that you can change at any time by calling one of their methods. In the example above, the canvas is positioned at (10, 100) relative to the upper left corner. This method is called only once in setup, after that it stays in position and does not need to be reset every frame.
+However, when you are working with elements, they hold a static state that you can change at any time by calling one of their methods. In the example above, the canvas is positioned at (10, 100) relative to the upper left corner (so, an *absolute* position - not always a good idea). This method is called only once in setup, after that it stays in position and does not need to be reset every frame.
+
+This is exactly the same with creating other HTML elements - you can create references to each of them as well. You can also set their css classes this way.
+
+```
+var text = createDiv("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
+img = createImg("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
+img.position(190, 50);
+img.size(200, 200);
+var myP = createP("THIS IS MY! P!");
+myP.class('someClassIMade');
+```
 
 ##### Using Parent vs. using Position
 
@@ -132,24 +144,6 @@ function setup() {
 ```
 
 Maybe you don't care which div container your elements end up in, but just want to set their position on the page. In this case you could use .position(x, y).
-
-##### Creating other HTML elements
-
-In addition to createCanvas(w, h), there are a number of other methods like createDiv(), createP(), createA(), etc (see the reference for full listing). In the example below, a div with text is created, in addition to the graphics canvas, and the position is set for each.
-
-var text = createDiv("Here is some text and <a href='http://i.imgur.com/WXaUlrK.gif'>this is an HTML link</a>!");
-
-##### Creating HTML images
-
-If want to create an image specifically you can use createImg(src). An HTML image differs from one drawn in the canvas using image(). You don't need to use loadImage(), and you don't need to draw it every frame; once you create it, the image exists on the page until you remove it.
-
-```
-img = createImg("http://th07.deviantart.net/fs70/PRE/i/2011/260/3/5/dash_hooray_by_rainbowcrab-d49xk0d.png");
-img.position(190, 50);
-img.size(200, 200);
-```
-
-Also video or other media depending on browser support.
 
 ##### Element specific listeners
 
