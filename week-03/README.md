@@ -76,7 +76,7 @@ For more sophisticated techniques, look up **Javascript prototypes**. [This is a
 
 ### P5.js and the Document-Object-Model (DOM)
 
-*Mostly taken from [https://github.com/processing/p5.js/wiki/Beyond-the-canvas]()https://github.com/processing/p5.js/wiki/Beyond-the-canvas) - to adapt*
+*Largely referenced from Dan Shiffman's stuff here - [https://github.com/processing/p5.js/wiki/Beyond-the-canvas](https://github.com/processing/p5.js/wiki/Beyond-the-canvas)*
 
 CreateCanvas creates an HTML5 Canvas. The Canvas is an **HTML element**, one component that makes up an HTML document. Just like other HTML elements you've seen before, like <body>, <head>, <p>, and <html>, the Canvas is a component that makes up an HTML document or web page - just one specific to HTML5.  
 
