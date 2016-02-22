@@ -328,19 +328,19 @@ In style.css:
 }
 ```
 
-### Dynamic Parenting and Child..ing(?)
+### OTHER STUFF!
 
-//draw the HTML element tree (html-body-p1 etc) (ID for solo elements, classes for repeated)
+##### Dynamic Parenting and Child..ing(?)
 
-### Dynamic CSS
+See [11-parent-child](/11-parent-child)
 
-### Removing, Hiding, Dragging/Dropping
+##### Dynamic CSS
 
-### Partner Workshopping
+##### Removing, Hiding, Dragging/Dropping
 
 Use OOP and the DOM to generate text from the interaction of elements on the screen. Have each object also represent some text. Whenever objects are overlapping, add all the text together and display it.
 
-### Fleisch Index
+
 
 
 ---
