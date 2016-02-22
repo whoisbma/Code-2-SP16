@@ -332,7 +332,7 @@ In style.css:
 
 ##### Dynamic Parenting and Child..ing(?)
 
-See [11-parent-child](/11-parent-child)
+See [11-parent-child](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/11-parent-child)
 
 ##### Dynamic CSS
 
