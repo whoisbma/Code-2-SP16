@@ -338,7 +338,7 @@ In style.css:
 
 ### Partner Workshopping
 
-Partner up with someone new. Get each other's source code from their github.io, and translate their code into their homework code into using the DOM to display instead of the canvas. Deactivate the canvas altogether.
+Use OOP and the DOM to generate text from the interaction of elements on the screen. Have each object also represent some text. Whenever objects are overlapping, add all the text together and display it.
 
 ### Fleisch Index
 
