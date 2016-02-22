@@ -336,35 +336,35 @@ See [11-parent-child](https://github.com/whoisbma/Code-2-SP16/tree/master/week-0
 
 ##### Dynamic CSS
 
-##### Removing, Hiding, Dragging/Dropping
+See [09-dynamic-CSS](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/09-dynamic-CSS)
 
-Use OOP and the DOM to generate text from the interaction of elements on the screen. Have each object also represent some text. Whenever objects are overlapping, add all the text together and display it.
+##### Dynamic DOM control and OOP integration
 
+See [12-dynamic-DOM-control](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/12-dynamic-DOM-control) and
+[13-OOP-plus-DOM](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/13-OOP-plus-DOM)
 
+##### Dragging/Dropping
+
+See [10-drag-drop](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/10-drag-drop)
+
+##### String loading
+
+See [14-load-file-button](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/14-load-file-button) and
+[15-loadstrings](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/15-loadstrings) and [16-string-input](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/16-string-input)
 
 
 ---
 ---
 ---
 
-### Datavis
 
-Hip Hop Word Count - https://vimeo.com/23874762 - http://hiphopwordcount.com/
-
-http://poly-graph.co/vocabulary.html
-
-Rap Research Group at Eyebeam
-
-https://medium.com/@neuroecology/punctuation-in-novels-8f316d542ec4#.cksr5jsgi
-
-http://www.informationisbeautiful.net/visualizations/billion-dollar-o-gram-2013/
 
 ## Homework 03
 
 ---- *Due midnight Sunday, 2/28/16* ----
 
-1. Use Javascript-style object oriented programming to illustrate the results of an analysis of strings. Use a literary source, like a section from a novel, a famous speech or poem, or song lyrics. Establish yourself what the reasoning for analysis is. It could be a traditional graph, or something more experimental.
+1. Overhaul your code from last week to only use the DOM with no canvas element.
 
-2. Overhaul your code from last week to only use the DOM with no canvas element.
+2. Create an object-oriented approach to generating text from given strings. 
 
 Reference:
