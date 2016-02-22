@@ -367,6 +367,8 @@ See [14-load-file-button](https://github.com/whoisbma/Code-2-SP16/tree/master/we
 
 2. Overhaul your code from last week to only use the DOM with no canvas element.
 
+3. Read [Chapter 4 of Eloquent Javascript](http://eloquentjavascript.net/04_data.html).
+
 3. Create an object-oriented approach to generating text from given strings. Take a look at [17-OOP-text-generation](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/17-OOP-text-generation) as a VERY rudimentary starting point. Explanation: 
 
 Last week you established an algorithm that mixed up text. This was a process that would systematically take your input and produce some output - everything happened offscreen, in the code, not exposing any of the system. The goal for this week is to have your algorithm produced by the relationship of JS objects in the scene, represented on-canvas!
