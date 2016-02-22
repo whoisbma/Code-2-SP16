@@ -377,3 +377,4 @@ If you're not feeling comfortable with the concept yet, use that to start. Add u
 
 Or, create an actual magnetic poetry simulator - and the text produced is produced by objects arranged adjacent to one another. Or, create a loop that iterates through an image, and assigns a word for each recognized color. There are tons of possibilities. The key is to have the algorithm actually visualized on canvas via the functionality of objects in your scene.
 
+Make sure all your code is up and running on your github.io page.
