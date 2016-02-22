@@ -3,7 +3,7 @@
 
 ## object oriented programming in p5.js // p5.js and the DOM
 
-##### February 15, 2016
+##### February 22, 2016
 
 ---
 
@@ -363,8 +363,10 @@ See [14-load-file-button](https://github.com/whoisbma/Code-2-SP16/tree/master/we
 
 ---- *Due midnight Sunday, 2/28/16* ----
 
-1. Overhaul your code from last week to only use the DOM with no canvas element.
+1. If you haven't set up your github.io page properly yet, do so.
 
-2. Create an object-oriented approach to generating text from given strings. 
+2. Overhaul your code from last week to only use the DOM with no canvas element.
+
+3. Create an object-oriented approach to generating text from given strings. Take a look at [17-OOP-text-generation](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/17-OOP-text-generation) as a VERY rudimentary starting point.
 
 Reference:
