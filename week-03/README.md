@@ -369,7 +369,11 @@ See [14-load-file-button](https://github.com/whoisbma/Code-2-SP16/tree/master/we
 
 3. Create an object-oriented approach to generating text from given strings. Take a look at [17-OOP-text-generation](https://github.com/whoisbma/Code-2-SP16/tree/master/week-03/17-OOP-text-generation) as a VERY rudimentary starting point. Explanation: 
 
-Last week you established an algorithm that mixed up text.
+Last week you established an algorithm that mixed up text. This was a process that would systematically take your input and produce some output - everything happened offscreen, in the code, not exposing any of the system. The goal for this week is to have your algorithm produced by the relationship of JS objects in the scene, represented on-canvas!
 
+This might seem complicated, but the example code above is a perfectly acceptable starting point. Each bubble object has a text value that could be set manually or by loading external text, or by user input. On collision, the strings of colliding bubbles get added together to create a string.
 
-Reference:
+If you're not feeling comfortable with the concept yet, use that to start. Add user interaction like clicking on bubbles to add their strings vs. their collisions. Make them disappear afterwards and maintain their string. Think about having a ton of bubbles - small ones with simple words like articles or prepositions or punctuation, and large ones with nouns and verbs or phrases. Or you could turn it into a game - what if you had a blockbreaker game where each block represents a phrase loaded from a file, and missing the ball could add a period and a new line?
+
+Or, create an actual magnetic poetry simulator - and the text produced is produced by objects arranged adjacent to one another. Or, create a loop that iterates through an image, and assigns a word for each recognized color. There are tons of possibilities. The key is to have the algorithm actually visualized on canvas via the functionality of objects in your scene.
+
