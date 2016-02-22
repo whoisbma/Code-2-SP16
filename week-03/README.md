@@ -74,9 +74,18 @@ In this code, we create an empty array called ```bubbles```, then in a loop in `
 
 For more sophisticated techniques, look up **Javascript prototypes**. [This is a good article](https://blog.pivotal.io/labs/labs/javascript-constructors-prototypes-and-the-new-keyword).
 
-### P5.js and the Document-Object-Model (DOM)
+##### Drawing Images in p5.js
 
-*Largely referenced from Dan Shiffman's stuff here - [https://github.com/processing/p5.js/wiki/Beyond-the-canvas](https://github.com/processing/p5.js/wiki/Beyond-the-canvas)*
+Using the preload() function, not setup!
+
+```
+function preload() {
+  flowers = [loadImage('images/flower0.jpg'),
+          loadImage('images/flower1.jpg'),
+          loadImage('images/flower2.jpg')];
+```
+
+### P5.js and the Document-Object-Model (DOM)
 
 CreateCanvas creates an HTML5 Canvas. The Canvas is an **HTML element**, one component that makes up an HTML document. Just like other HTML elements you've seen before, like <body>, <head>, <p>, and <html>, the Canvas is a component that makes up an HTML document or web page - just one specific to HTML5.  
 
@@ -200,7 +209,9 @@ canvas.mouseOver(function() {
 
 ##### Element vs global listeners
 
-Elements also have mousePressed() methods that let you connect functions to the mousePressed event on a per element level. Important: this is different than using the global mousePressed() method, which gets triggered anytime the mouse is clicked anywhere. With these element specific handlers, the function is only called when you click directly on the element.
+You should be familiar with the mousePressed() event from Processing, and p5.js has an analogous listener method. However there is another mousePressed() method that lets you connect functions to specific elements. Unlike the global listener, you must supply as an argument the name of another method you want to call when it is triggered. 
+
+The global mousePressed() method is triggered every time the mouse is clicked anywhere - but the method linked to an element.mousePressed() is only called when the element itself is clicked on.
 
 In this example, every click on the page anywhere makes the background lighter. However, only clicks directly on the canvas change the size of the ellipse.
 
@@ -208,9 +219,15 @@ In this example, every click on the page anywhere makes the background lighter. 
 var gray = 0;
 var diameter = 5;
 
+var headerText;
+
 function setup(){
+  headerText = createElement('h1', 'WOOOOOOOOO');
+  headerText.mousePressed(changeText);
   var canvas =  createCanvas(200, 200);
   canvas.mousePressed(incDiameter);
+  createP('some pees here!');
+  
 }
 
 function draw() {
@@ -225,6 +242,11 @@ function mousePressed() {
 function incDiameter() {
     diameter = diameter + 5;
 }
+
+function changeText() {
+  // headerText.html('You clicked me!');
+	this.html('YOU CLICKED MEEEEE');
+}
 ```
 
 ##### Setting style
@@ -235,19 +257,35 @@ In p5.js, you can use a style() method on any element to set CSS properties. See
 
 ```
 var text;
-var canvas;
 
 function setup() {
+  noCanvas();
   text = createP("This is an HTML string with style!");
-  canvas = createCanvas(600, 400);
-
   text.position(50, 50);
-  text.style("font-family", "monospace");
+  text.style("font-family", "sans-serif");
   text.style("background-color", "#FF0000");
   text.style("color", "#FFFFFF");
   text.style("font-size", "18pt");
   text.style("padding", "10px");
-  canvas.position(150, 150);
+}
+```
+
+```
+function setup() {
+  noCanvas();
+  for (var i = 0; i < 500; i++) {
+    var div = createDiv('div!');
+    div.style('padding', '12px');
+    var r = floor(random(100, 255));
+    var b = floor(random(150, 200));
+    var g = floor(random(0,255));
+    var col = 'rgb(' + r + ',' + g + ',' + b + ')';
+    div.style('background-color', col);
+    div.style('font-family', 'monospace');
+    div.style('color', '#FFF');
+    div.style('opacity','0.5');
+    div.position(random(windowWidth),random(windowHeight));
+  }
 }
 ```
 
@@ -255,7 +293,8 @@ function setup() {
 
 Another way to incorporate this into your sketch is by creating your own stylesheet. To do this, create a file called something like style.css. Add a link to this file in the head of your HTML file.
 
-<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
 In the CSS file, you add what are called "rules", or lines that determine how various elements are presented. You can define these rules based on the HTML tag (p, div, span, etc), an element class (prefaced with "."), or an element id (prefaced with "#"). The below example renders the same as the previous example, but uses a CSS stylesheet instead of the .style() method. Note that in this case, no quotes are placed around either the property names or the values.
 
 ```
@@ -266,7 +305,7 @@ function setup() {
   text = createP("This is an HTML string with style!");
   canvas = createCanvas(600, 400);
   text.position(50, 50);
-  text.class("lemon"); // assign a class to be used by the CSS sheet
+  text.class("monoClass"); // assign a class to be used by the CSS sheet
   canvas.position(150, 150);
 }
 
@@ -280,7 +319,7 @@ function draw() {
 In style.css:
 
 ```
-.lemon {
+.monoClass {
     font-family: monospace;
     background-color: #FF0000;
     color: #FFFFFF;
@@ -289,15 +328,20 @@ In style.css:
 }
 ```
 
+### Dynamic Parenting and Child..ing(?)
+
+//draw the HTML element tree (html-body-p1 etc) (ID for solo elements, classes for repeated)
+
+### Dynamic CSS
+
+### Removing, Hiding, Dragging/Dropping
+
 ### Partner Workshopping
 
 Partner up with someone new. Get each other's source code from their github.io, and translate their code into their homework code into using the DOM to display instead of the canvas. Deactivate the canvas altogether.
 
-### RiTaJS
+### Fleisch Index
 
-*BM - Maybe leave this for later.*
-
-https://github.com/dhowe/RiTaJS
 
 ---
 ---
@@ -305,21 +349,22 @@ https://github.com/dhowe/RiTaJS
 
 ### Datavis
 
-*BM - show some fun stuff*
+Hip Hop Word Count - https://vimeo.com/23874762 - http://hiphopwordcount.com/
 
+http://poly-graph.co/vocabulary.html
 
+Rap Research Group at Eyebeam
 
 https://medium.com/@neuroecology/punctuation-in-novels-8f316d542ec4#.cksr5jsgi
 
-
-
-
-
+http://www.informationisbeautiful.net/visualizations/billion-dollar-o-gram-2013/
 
 ## Homework 03
 
 ---- *Due midnight Sunday, 2/28/16* ----
 
-1. Use Javascript-style object oriented programming to illustrate the results of an analysis of strings. Establish yourself what the reasoning for analysis is.
+1. Use Javascript-style object oriented programming to illustrate the results of an analysis of strings. Use a literary source, like a section from a novel, a famous speech or poem, or song lyrics. Establish yourself what the reasoning for analysis is. It could be a traditional graph, or something more experimental.
 
-*BM- mix of object-oriented programming and DOM interaction.*
+2. Overhaul your code from last week to only use the DOM with no canvas element.
+
+Reference:

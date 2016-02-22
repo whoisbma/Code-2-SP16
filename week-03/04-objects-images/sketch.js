@@ -7,22 +7,22 @@ function preload() {
   //         loadImage('images/flower2.jpg')];
 
 
-  for (var i = 0; i < 3; i++) {
-    flowers[i] = loadImage('images/flower' + i + '.jpg');
-  }
+  // for (var i = 0; i < 3; i++) {
+  //   flowers[i] = loadImage('images/flower' + i + '.jpg');
+  // }
 
 }
 
 function setup() {
   createCanvas(600, 400);
   for (var i = 0; i < 1; i++) {
-    bubbles[i] = new Bubble(random(width), random(height), flowers[floor(random(flowers.length))]);
+    bubbles[i] = new Bubble(random(width), random(height));//, flowers[floor(random(flowers.length))]);
   }
   console.log(bubbles[0]);
 }
 
 function draw() {
-  background(255);
+  background(0);
   // for (var i = 0; i < bubbles.length; i++) {
   //   bubbles[i].display();
   //   bubbles[i].update();
@@ -40,8 +40,9 @@ function draw() {
   }
 
 
-  if (bubbles.length > 50) {
-    bubbles.splice(0, 1);
+  if (bubbles.length > 100) {
+    // bubbles.splice(0, 1);
+    bubbles.splice(floor(random(100)), 1);
   }
 }
 
@@ -56,25 +57,27 @@ function mousePressed() {
 }
 
 function mouseDragged() {
-  bubbles.push(new Bubble(mouseX, mouseY, flowers[floor(random(flowers.length))]));
+  bubbles.push(new Bubble(mouseX, mouseY));
+  // bubbles.push(new Bubble(mouseX, mouseY, flowers[floor(random(flowers.length))]));
 }
 
-function Bubble(x, y, img) {
+function Bubble(x, y) {//, img) {
   this.x = x;
   this.y = y;
-  this.img = img;
+  // this.img = img;
+  this.d = random(10,50);
 
   this.lifespan = 255;
-  // this.col = color(255,this.lifespan);
+  this.col = color(255,this.lifespan);
 
   this.display = function() {
     noStroke();
     // stroke(255);
-    // fill(this.col);
-    tint(255, this.lifespan);
-    imageMode(CENTER);
-    image(this.img, this.x, this.y, 35, 35);
-    // ellipse(this.x, this.y, 35, 35);
+    fill(this.col);
+    // tint(255, this.lifespan);
+    // imageMode(CENTER);
+    // image(this.img, this.x, this.y, 35, 35);
+    ellipse(this.x, this.y, this.d, this.d);
   };
 
   this.update = function() {
@@ -93,5 +96,7 @@ function Bubble(x, y, img) {
       return true;
     }
     return false;
-  }
+  };
+
+
 }
