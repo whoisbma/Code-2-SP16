@@ -24,3 +24,20 @@ http://www.informationisbeautiful.net/visualizations/billion-dollar-o-gram-2013/
 ## Homework 05
 
 ---- *Due midnight Sunday, 2/28/16* ----
+
+
+
+
+for much later: 
+
+http://motherboard.vice.com/read/how-to-think-about-bots
+
+
+https://twitter.com/oliviataters
+
+http://fusion.net/story/47353/twitter-bot-death-threat/
+
+http://tinysubversions.com/2013/03/basic-twitter-bot-etiquette/
+
+https://github.com/dariusk/NaNoGenMo
+

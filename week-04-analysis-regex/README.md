@@ -35,7 +35,7 @@ Score|School Level|Notes
 
 From wikipedia:
 
-	Reader's Digest magazine has a readability index of about 65, Time magazine scores about 52, an average grade six student's written assignment (age of 12) has a readability index of 60–70 (and a reading grade level of six to seven), and the Harvard Law Review has a general readability score in the low 30s. The highest (easiest) readability score possible is around 120 (e.g. every sentence consisting of only two one-syllable words; "The cat sat on the mat." scores 116). The score does not have a theoretical lower bound. It is possible to make the score as low as wanted by arbitrarily including words with many syllables. The sentence "This sentence, taken as a reading passage unto itself, is being used to prove a point." has a readability of 74.1. The sentence "The Australian platypus is seemingly a hybrid of a mammal and reptilian creature." scores 24.4 as it has 26 syllables and 13 words. While Amazon calculates the text of Moby Dick as 57.9,[9] one particularly long sentence about sharks in chapter 64 has a readability score of −146.77.[10] One sentence in the beginning of "Swann's Way", by Marcel Proust, has a score of −515.1.[11] Even further, the chemical name for titin, 189,819 characters long, scores a −6,128,472, with 72,443 syllables. The U.S. Department of Defense uses the reading ease test as the standard test of readability for its documents and forms. Florida requires that life insurance policies have a Flesch reading ease score of 45 or greater.
+Reader's Digest magazine has a readability index of about 65, Time magazine scores about 52, an average grade six student's written assignment (age of 12) has a readability index of 60–70 (and a reading grade level of six to seven), and the Harvard Law Review has a general readability score in the low 30s. The highest (easiest) readability score possible is around 120 (e.g. every sentence consisting of only two one-syllable words; "The cat sat on the mat." scores 116). The score does not have a theoretical lower bound. It is possible to make the score as low as wanted by arbitrarily including words with many syllables. The sentence "This sentence, taken as a reading passage unto itself, is being used to prove a point." has a readability of 74.1. The sentence "The Australian platypus is seemingly a hybrid of a mammal and reptilian creature." scores 24.4 as it has 26 syllables and 13 words. While Amazon calculates the text of Moby Dick as 57.9,[9] one particularly long sentence about sharks in chapter 64 has a readability score of −146.77.[10] One sentence in the beginning of "Swann's Way", by Marcel Proust, has a score of −515.1.[11] Even further, the chemical name for titin, 189,819 characters long, scores a −6,128,472, with 72,443 syllables. The U.S. Department of Defense uses the reading ease test as the standard test of readability for its documents and forms. Florida requires that life insurance policies have a Flesch reading ease score of 45 or greater.
 	
 We'll be using an example by Daniel Shiffman and picking it apart a little bit.
 
@@ -55,11 +55,9 @@ We know we can read in text from a file and store it in a String object as demon
 The first thing we’ll do is count the number of words in the text. We’ve seen in some of the examples above that we can accomplish this by using split() to split a String up into an array wherever there is a space. For this example, however, we are going to want to split by more than a space. A new word occurs whenever there is a space or some sort of punctuation.
 
 ```
-var delimiters = /[.:;?! !@#$%^&*()]+/;
-var words = data.split(delimiters);
+var delimiters = '.:;?! !@#$%^&*()+';
+var words = splitTokens(data, delimiters);
 ```
-
-You'll notice some new syntax here. /[.:;?! !@#$%^&*()]+/ is a regular expression. We are going to cover regex in detail next week. For now, we should just understand this as something that indicates a list of possible delimiters (any character than appears between /[ and ]+/).
 
 Now we have split up the text, we can march through all the words (tokens) and count their syllables.
 
@@ -73,7 +71,7 @@ for (var i = 0; i < words.length; i++) {
 
 Ok, so countSyllables() isn’t a function that exists in JavaScript. We’re going to have to write it ourselves. The following method is not the most accurate way to count syllables, but it will do for now.
 
-	Syllables = total # of vowels in a word (not counting vowels that appear after another vowel and when &#8216;e&#8217; is found at the end of the word)
+**Syllables = total # of vowels in a word (not counting vowels that appear after another vowel and when 'e' is found at the end of the word)**
 	
 * “beach” –> one syllable
 * “banana” –> three syllables
@@ -81,10 +79,6 @@ Ok, so countSyllables() isn’t a function that exists in JavaScript. We’re go
 * Our code looks like this:
 
 ```
-// A method to count the number of syllables in a word
-// Pretty basic, just based off of the number of vowels
-// This could be improved
-
 function countSyllables(word) {
   var syl    = 0;
   var vowel  = false;
@@ -126,8 +120,8 @@ Counting sentences is a bit simpler. We’ll just split the content using period
 
 ```
 // Look for sentence delimiters
-var sentenceDelim = /[.:;?!]/;
-var sentences = data.split(sentenceDelim);
+var sentenceDelim = '.:;?!';
+var sentences = splitTokens(data, sentenceDelim);
 totalSentences = sentences.length;
 ```
 
