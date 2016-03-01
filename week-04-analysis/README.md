@@ -116,7 +116,7 @@ function isVowel(c) {
 }
 ```
 
-Counting sentences is a bit simpler. We’ll just split the content using periods, question marks, exclamation points, etc. (“.:;?!”) as delimiters and count the total number of elements in the resulting array. This isn’t terribly accurate; for example, “My e-mail address is daniel.shiffman@nyu.edu.” will be counted as three sentences. Nevertheless, as a first pass, this will do.
+Counting sentences is a bit simpler. We’ll just split the content using periods, question marks, exclamation points, etc. (“.:;?!”) as delimiters and count the total number of elements in the resulting array. This isn’t terribly accurate, but its ok for our purposes.
 
 ```
 // Look for sentence delimiters
