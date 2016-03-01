@@ -155,18 +155,26 @@ The Flesch index is by no means the only test. There are lots of alternatives. M
 
 [Gunning fog index](https://en.wikipedia.org/wiki/Gunning_fog_index)
 
-### Simple Measure of Goobledygook (SMOG)
-
-
-
-### Regular Expressions
-
-
-
-
-
 ### Homework 04
 
----- *Due midnight Sunday, 2/28/16* ----
+---- *Due midnight Sunday, 3/6/16* ----
 
-*BM- regular expression practice.*
+Post the following:
+
+- Continuing on with your work on modifying the Flesch index, invent a new statistical analysis test and implement it. 
+- Display the resulting text in an interesting way, using either the DOM or the canvas. 
+- An example would be to develop a buzzword analyzer for the art world or startups. Here you would be looking for instances of a single word rather than identifying syllable and word and sentence counts. But perhaps you could still have some relationship between them. 
+- Another example would be to look at the number of times the word "I" "me" or "my" appears in a text - possibly something to run a social media post through before posting XD. 
+- Think about what you can look for, and how you can develop a formula to analyze it.
+- With the display of the results, be creative. Maybe different results display a different kind of meme image that you've preloaded into the sketch - like a buzzfeed quiz result or something.
+- Maybe you use canvas to draw an actual chart or bar graph.
+
+If you need it, watch the following youtube series for P5.js practice. This is important. If you think things are going too fast, spend time on this.
+
+- [p5.js and javascript foundations](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA)
+- [p5.js and the DOM](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6bI1SlcCRfLH79HZrFAtBvX)
+
+Take a look at the two Dan Shiffman examples in the code.
+
+Finally, if you haven't posted your homework 3 yet, take the time to get it working and up online.
+
