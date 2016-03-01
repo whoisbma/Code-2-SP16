@@ -1,15 +1,7 @@
 ## Week 04:
 ---
-##### February 22, 2016
+##### February 29, 2016
 ---
-
-### Homework handling example
-
-### More history and Oulipo
-
-Life: A User's Manual
-
-Knight's Graph
 
 Now that we have our basic Javascript and OOP in p5.js under our belt, we should start thinking about some basic statistical analysis.
 

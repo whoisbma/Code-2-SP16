@@ -1,11 +1,19 @@
 ## Week 05:
 ---
-
 ## Data and APIs
 
 ##### March 7, 2016
 
 ---
+
+### More history and Oulipo
+
+Life: A User's Manual
+
+Knight's Graph
+
+
+
 
 
 ### Datavis
