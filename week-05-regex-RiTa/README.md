@@ -1,51 +1,86 @@
 ## Week 05:
 ---
-## Data and APIs
+## Regular Expressions (Regex)
 
 ##### March 7, 2016
 
----
+##### Some Metacharacters
 
-### More history and Oulipo
+```
+^			beginning of line
+$			end of line
+\b			word boundary
+\B			a non word boundary
+.			any one character
+\d			any digit from 0 to 9
+\w			any word character (a-z,A-Z,0-9)
+\W			any non-word character
+\s			any whitespace character (tab, new line, form feed, end of line, carriage return)
+\S			any non whitespace character
+?			appearing once or not at all
+*			appearing zero or more times
++			appearing one or more times
+{min,max}	appearing within the specified range
+[options]	character class - for example [aeiou] - either a, e, i, o, or u will match
+|			Alternation (or)
+()			Parenthesis will constrain alternation and also provide back-references.
+```
 
-Life: A User's Manual
+##### Some basic examples
 
-Knight's Graph
+```
+http://[^\s<>"']+				match URLS
+\w+@\w+\.(net|com|edu|org)		match emails
+(\d+)[-.]\d+[-.]\d+				match simple phone number
+```
 
+##### In Javascript
 
+Regex object can be created two ways:
 
+```
+var myRegex1 = new RegExp('[aeiou]+');
 
+var myRegex2 = /[aeiou]+/;
+```
 
-### Datavis
+Flags:
 
-Hip Hop Word Count - https://vimeo.com/23874762 - http://hiphopwordcount.com/
+```
+/regex goes here/g
+//global flag, will match all instances
 
-http://poly-graph.co/vocabulary.html
+/regex goes here/i
+//case-insensitivity flag, capitals or lowercase letters
+```
 
-Rap Research Group at Eyebeam
+RegExp methods:
 
-https://medium.com/@neuroecology/punctuation-in-novels-8f316d542ec4#.cksr5jsgi
+```
+myRegex.test(string goes here);
+//returns true if matched
 
-http://www.informationisbeautiful.net/visualizations/billion-dollar-o-gram-2013/
+myRegex.exec(string goes here);
+//returns an array of matches (if global)
+```
 
+String methods:
+
+```
+myString.search(regex goes here);	
+//returns the index number of the match (like indexOf())
+
+myString.match(regex goes here);	
+//similar to .exec method of RegExp object
+
+myString.replace(regex, replacement string);	
+//replaces matches with the replacement string
+//can use a backreference (captured with parentheses) to the regex match with $1, $2, etc. for replacement string
+```
 
 ## Homework 05
 
----- *Due midnight Sunday, 2/28/16* ----
+---- *Due midnight Sunday, 3/13/16* ----
 
-
-
-
-for much later: 
-
-http://motherboard.vice.com/read/how-to-think-about-bots
-
-
-https://twitter.com/oliviataters
-
-http://fusion.net/story/47353/twitter-bot-death-threat/
-
-http://tinysubversions.com/2013/03/basic-twitter-bot-etiquette/
-
-https://github.com/dariusk/NaNoGenMo
-
+1. Convert your Flesch code to use Regex
+2. Check out the [Pirate Translator](http://www.apple.com/downloads/dashboard/calculate_convert/piratetranslator.html) and create something using the .replace string method to create some other kind of text converter.
