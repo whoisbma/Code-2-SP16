@@ -1,38 +1,81 @@
 ## Week 06:
 ---
-## Concordances, TF-IDF
+## Concordances / Word Counting
 
 ##### March 14, 2016
 
 ---
 
+A fundamental approach to any kind of textual analysis - whether for subsequent text generation, or things like culling spam from emails - is a simple word count. We should be able to easily answer these questions:
 
-#### Associative Arrays
+* What words appear in the text?
+* How often does each word appear in the text?
 
-associative array / map / hash / dictionary: key-value pairs
+With this we can already do a lot - from simple word clouds to more sophisticated statistical analysis.
 
-student name/id , list of prices and product names.
+#### Word Clouds
 
-fundamental building block of basically every text analysis application is a concordance - a list of all words in a document along with how many times each word occurred. a dictionary is the perfect data structure to hold this info. each element of the dictionary is a string paired with a number.
+Word clouds have been called "the mullets of the internet". Mainly because they're ugly and feel dated. [They're also considered harmful by some.](http://www.niemanlab.org/2011/10/word-clouds-considered-harmful/)
 
-most programming languages and environments have specific classes or objects for things like dictionaries. javascript doesn't. but its basically a javascript object.
+[Wordle is a tool for generating word clouds.](http://www.wordle.net/) Dead because Java applets (I think)
+
+![yuck](https://media.nngroup.com/media/editor/2012/11/18/wordle-word-cloud-applications.png)
+
+Even though these things are dated, they illustrate pretty keenly what the fundamentals of word counting can result in. Each word's size corresponds to the amount of times it has appeared in the text. This gives a certain sense of the importance of the word/concept. 
+
+What would be a better way to visually represent this information?
+
+#### Better ways?
+
+Check out these projects:
+
+R Luke Dubois - [Hindsight is Always 20/20](http://hindsightisalways2020.net/)
+
+![http://www.thegundgallery.org/wp-content/uploads/2012/08/Dubois_6-e1350567856254.jpg](http://www.thegundgallery.org/wp-content/uploads/2012/08/Dubois_6-e1350567856254.jpg)
+
+[Hip Hop Word Count](http://staplecrops.com/category/hip_hop_word_count/)
+
+![hhwc](http://images.bigcartel.com/bigcartel/product_images/151287214/max_h-1000+max_w-1000/PicassoBaby_BigCartel.jpg)
+
+[Largest Vocab in Hip-Hop](http://poly-graph.co/vocabulary.html)
+
+![vocab hip hop](http://poly-graph.co/css/wu-tang-graph3.png)
+
+[Nicholas Felton's Annual Report](http://feltron.com/FAR13.html)
+
+![Annual Report](http://iibawards-prod.s3.amazonaws.com/app/public/ckeditor_assets/pictures/29/content_far13_05_2x.jpg)
+
+#### Javascript Objects as Associative Arrays
+
+We can't use lone arrays to count words. We need a data type that holds "key-value pairs." 
+
+In other languages these data types are called **associative arrays**, **maps**, **hashes/hashmaps**, **dictionaries.** In JavaScript we'll just use an ordinary JavaScript object.
+
+We could use this to store names of students and their N numbers for example.
+
+Try the following and see what happens.
 
 ```
+//an ordinary array
 var nameList = ['Jane', 'Sue', 'Bob'];
-  var students = {
-    N0472918: 'Bryan',
+
+//a javascript object being used to store key-value pairs
+var students = {
+	N0472918: 'Bryan',
     N0123758: 'Ryan',
     N0012387: 'Brian'
-  };
-  console.log("is your name " + nameList[1] + '?');
-  console.log("is your name " + students[1] + '?');
-  console.log("is your name " + students['N0472918'] + '?');
-  console.log("is your name " + students.N0012387 + '?');
+};
+
+//this works, this is how we access array values:
+console.log("is your name " + nameList[1] + '?');
+
+//this DOES NOT work. its looking for key value "1" which students does not have.
+console.log("is your name " + students[1] + '?');
+
+//these two both work:
+console.log("is your name " + students['N0472918'] + '?');
+console.log("is your name " + students.N0012387 + '?');
 ```
-
-A Javascript object is a collection of name-value pairs.
-
-While it might be more convenient to have a custom-tailored dictionary object, we're going to get everything we need out of this normal js object.
 
 #### Concordances
 
@@ -61,22 +104,27 @@ var concordance = {};
 We'll plug in some text into a data variable and loop through it, adding to the concordance.
 
 ```
+//create an empty javascript object:
 var concordance = {};
   
-  data = "A large program is a costly program, and not just because of the time it takes to build. "; 
-  data += "Size almost always involves complexity, and complexity confuses programmers. ";
-  data += "Confused programmers, in turn, tend to introduce mistakes (bugs) into programs. ";
-  data += "A large program also provides a lot of space for these bugs to hide, making them hard to find. ";
-  data += "Let’s briefly go back to the final two example programs in the introduction. The first is self-contained and six lines long.";
+//some arbitrary text:
+data = "A large program is a costly program, and not just because of the time it takes to build. "; 
+data += "Size almost always involves complexity, and complexity confuses programmers. ";
+data += "Confused programmers, in turn, tend to introduce mistakes (bugs) into programs. ";
+data += "A large program also provides a lot of space for these bugs to hide, making them hard to find. ";
+data += "Let’s briefly go back to the final two example programs in the introduction. The first is self-contained and six lines long.";
 
-  var tokens = data.split(/\W+/);
-  
-  for (var i = 0; i < tokens.length; i++) {
-    var word = tokens[i];
+//split the text into an array of words, using regex:
+var tokens = data.split(/\W+/);
+
+//loop through the array of words:
+for (var i = 0; i < tokens.length; i++) {
+	var word = tokens[i];
     //if its a new word:
     if (concordance[word] === undefined) {
+      //create the key (the word) and value (1) in the concordance object:
       concordance[word] = 1;
-    } else { // if we've seen this word before:
+    } else { // if we've seen this word before, increment the value:
       concordance[word]++;
     }
   }
@@ -99,7 +147,9 @@ var keys = [];
   }
 ```
 
-now how to sort? we can use the javascript sort() function which is part of the array prototype. the sort function expects a function as an argument. the function it wants is something to either return true or false on whether or not to place b before a.
+now how to sort? we can use the javascript sort() function which is part of the array prototype. the sort function expects a function as an argument. the function it wants is something to return a number that indicates whether or not to change the order of elements its currently analyzing (a and b).
+
+Look at [the Javascript reference doc for more info.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
 ```
 keys.sort(function(a, b) {
@@ -107,30 +157,21 @@ keys.sort(function(a, b) {
 });
 ```
 
-we can either pass in a function anonymously or explicitly.
+We can either pass in a function anonymously or explicitly.
 
 ```
+//pass in function value directly as argument of sort().
 keys.sort(function(a, b) {
-    if (concordance[b] > concordance[a]) {
-      return true;
-    } else {
-      return false;
-    }
-  });
+	return (concordance[b] - concordance[a]);
+});
 
-  //or
-
-  // console.log(keys);
-  keys.sort(function(a, b) {
+//or create the function first, separately,
+var concordanceSort = function(a, b) {
     return (concordance[b] - concordance[a]);
-  });
+}
 
-  //or,
-  var concordanceSort = function(a, b) {
-    return (concordance[b] - concordance[a]);
-  }
-
-  keys.sort(concordanceSort);
+//and plug it into the sort function.
+keys.sort(concordanceSort);
 ```
 
 next, now that we have sorted keys, we can iterate over the concordance.
@@ -152,19 +193,30 @@ for (var key in obj) {
 }
 ```
 
-#### Stuff
+#### More stuff to think about
 
-http://secretlifeofpronouns.com/
+[The Secret Life of Pronouns](http://secretlifeofpronouns.com/)
 
-http://www.tfidf.com/
+[Analyze Words](http://www.analyzewords.com/)
 
-http://www.analyzewords.com/
+#### Next
+
+Check out the following areas if you're feeling good about concordances so far. We briefly went over these topics in class but didn't write code specifically for them. The text is from Wikipedia and also Dan Shiffman from ITP.
 
 #### Term Frequency - Inverse Document Frequency
 
-Common application of concordances: TF-IDF
+---
+**TL:DR:**
 
-A numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus. It is often used as a weighting factor in information retrieval and text mining. The tf-idf value increases proportionally to the number of times a word appears in the document, but is offset by the frequency of the word in the corpus, which helps to adjust for the fact that some words appear more frequently in general.
+* Use this if you want to find the importance of each word in a text you're analyzing.
+
+* You need to analyze other documents in addition to the main text itself.
+
+* This will make sure that you don't weigh common and unimportant words like "the" "a" "and" "of" etc.
+
+---
+
+TF-IDF is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus. It is often used as a weighting factor in information retrieval and text mining. The tf-idf value increases proportionally to the number of times a word appears in the document, but is offset by the frequency of the word in the corpus, which helps to adjust for the fact that some words appear more frequently in general.
 
 Variations of the tf–idf weighting scheme are often used by search engines as a central tool in scoring and ranking a document's relevance given a user query. tf–idf can be successfully used for stop-words filtering in various subject fields including text summarization and classification.
 
@@ -181,6 +233,13 @@ Because the term "the" is so common, term freqency will tend to incorrectly emph
 tf–idf is the product of these two statistics, term frequency and inverse document frequency. Various ways for determining the exact values of both statistics exist.
 
 #### Bayes' Theorem
+
+---
+**TL:DR:**
+
+* This is a tool that you can use to make even more judgments based on things like word counts.
+
+---
 
 In probability theory and statistics, Bayes' theorem (alternatively Bayes' law or Bayes' rule) describes the probability of an event, based on conditions that might be related to the event. For example, suppose one is interested in whether a woman has cancer and knows that she is 65 years old. If cancer is related to age, then, using Bayes' Theorem, information about her age can be used to more accurately assess the probability that she has cancer.
 
@@ -248,63 +307,32 @@ The above steps are repeated over and over again for all training documents. Onc
 
 Once we've gone through the process of counting the occurences in each category ('A' or 'B', spam or good email), we can calculate the probabilities according to Bayes rule. Finally, we can then take a new document and compute the total probability for that document.
 
-### Datavis
-
-Hip Hop Word Count - https://vimeo.com/23874762 - http://hiphopwordcount.com/
-
-http://poly-graph.co/vocabulary.html
-
-Rap Research Group at Eyebeam
-
-https://medium.com/@neuroecology/punctuation-in-novels-8f316d542ec4#.cksr5jsgi
-
-http://www.informationisbeautiful.net/visualizations/billion-dollar-o-gram-2013/
-
-SPEECH COMPARISON by Rune Madsen
-
-Book-Book by Sarah Groff-Palermo
-
-Word Tree by Jason Davies
-
-Wordle
-
-OK GO album covers by Stefanie Posavec
-
-Luke Dubois’ Missed Connections
-
-Luke Dubois’ HindSight is always 20/20
-
-Nicholas Felton’s 2013 Annual Report, NY Times Article
-
-Lyrical Indicators and Parsing the State of the Union by Jonathan Corum
-
-
-
 ## Homework 06
 
----- *Due midnight Sunday, 2/28/16* ----
+---- *Due midnight Sunday, 3/20/16* ----
 
+**Make an improvement on a word cloud.** 
 
-http://geon.github.io/programming/2016/03/03/dsxyliea
+* How could you make a visual representation of word counts that conveys information more reliably than a word cloud? 
+* To do this you would take your javascript object with all the word counts, loop through it, and create graphics using them as data. 
+* You could create a bar chart, or bubbles, or any other visual form you feel like. You could say textSize(concordance[word[i]]) to directly impact the size of text based on the word count for example.
+* This is primarily an information design experiment to get you experimenting with the concordance.
 
-for much later: 
+Some key code once you have the concordance working: 
 
-http://motherboard.vice.com/read/how-to-think-about-bots
+```
+for (var i = 0; i < keys.length; i++) {
+	console.log(keys[i] + ': ' + concordance[keys[i]]);
+}
+```
+This prints out the concordance and all the keys, after they have been sorted. Make sure you get the example code working up to this point.
 
+Once you have that, `keys[(number of the word)]` corresponds to the word in text, and `concordance[keys(number of the word)]` corresponds to the number of times that word appears. You can use the number of times the word appears to create a size variable for an ellipse, or a rotation speed for text that you draw on the screen, or any other thing you can imagine.
 
-https://twitter.com/oliviataters
+***EMAIL ME IF YOU ARE HAVING PROBLEMS WITH THE HOMEWORK AND I WILL HELP YOU!***
 
-http://fusion.net/story/47353/twitter-bot-death-threat/
+**Alternatives: **
 
-http://tinysubversions.com/2013/03/basic-twitter-bot-etiquette/
+* *Advanced: use TF-IDF or Bayesian statistical analysis.*
 
-https://github.com/dariusk/NaNoGenMo
-
-
-More history and Oulipo:
-
-Life: A User's Manual
-
-Knight's Graph
-
-
+* *Or create something else with a concordance entirely!*

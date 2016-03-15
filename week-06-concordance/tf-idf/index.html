@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TF-IDF</title>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="libraries/p5.sound.js" type="text/javascript"></script>
+
+    <script src="sketch.js" type="text/javascript"></script>
+
+    <style> 
+      
+      body {
+        padding: 0px 20px; 
+        margin: 0;
+      } 
+      
+      canvas {
+        vertical-align: top;
+      }
+      
+      #dropzone1 {
+        padding: 20px;
+        border-style: dotted;
+        width: 200px;
+        text-align: center;
+      }
+      #dropzone2 {
+        padding: 20px;
+        border-style: dotted;
+        width: 200px;
+        text-align: center;
+      }
+      #dropzone3 {
+        padding: 20px;
+        border-style: dotted;
+        width: 200px;
+        text-align: center;
+      }
+      #dropzone4 {
+        padding: 20px;
+        border-style: dotted;
+        width: 200px;
+        text-align: center;
+      }
+      #dropzone5 {
+        padding: 20px;
+        border-style: dotted;
+        width: 200px;
+        text-align: center;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <h1>TF-IDF</h1>
+    <p>Load multiple texts from file or in text box.</p>
+    <p>
+      <div id="dropzone1">First text - MAIN DOCUMENT!</div>
+    <p>
+      <textarea id="textinput1" rows="5" cols="40">First text</textarea><br>
+      <button id="submit1">Submit</button>
+    </p>
+    
+    <p>
+      <div id="dropzone2">Second text - compare document</div>
+    <p>
+      <textarea id="textinput2" rows="5" cols="40">Second text</textarea><br>
+      <button id="submit2">Submit</button>
+    </p>
+    
+    <p>
+      <div id="dropzone3">Third text - compare document</div>
+    <p>
+      <textarea id="textinput3" rows="5" cols="40">Third text</textarea><br>
+      <button id="submit3">Submit</button>
+    </p>
+    
+    <p>
+      <div id="dropzone4">Fourth text - compare document</div>
+    <p>
+      <textarea id="textinput4" rows="5" cols="40">Fourth text</textarea><br>
+      <button id="submit4">Submit</button>
+    </p>
+    
+    <p>
+      <div id="dropzone5">Fifth text - compare document</div>
+    <p>
+      <textarea id="textinput5" rows="5" cols="40">Fifth text</textarea><br>
+      <button id="submit5">Submit</button>
+    </p>
+    
+  </body>
+</html>
