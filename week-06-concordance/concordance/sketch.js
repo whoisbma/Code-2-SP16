@@ -32,17 +32,8 @@ function setup() {
     }
   }
 
-  // keys.sort(function(a, b) {
-  //   if (concordance[b] > concordance[a]) {
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // });
-
-  //or
-
   // console.log(keys);
+  
   keys.sort(function(a, b) {
     return (concordance[b] - concordance[a]);
   });
@@ -51,7 +42,6 @@ function setup() {
   // var concordanceSort = function(a, b) {
   //   return (concordance[b] - concordance[a]);
   // }
-
   // keys.sort(concordanceSort);
 
 
@@ -59,8 +49,9 @@ function setup() {
   //next, now that we have sorted keys, we can iterate over the concordance.
   
   for (var i = 0; i < keys.length; i++) {
-    console.log(keys[i] + ': ' + concordance[keys[i]]);
+    console.log(keys[i] + ': ' + concordance[keys[i]]); //THIS IS THE IMPORTANT PART!
   }
+  
 }
 
 function draw() {
