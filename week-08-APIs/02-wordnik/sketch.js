@@ -1,4 +1,4 @@
-//wordnik.
+//by daniel shiffman
 
 var url1 = "http://api.wordnik.com/v4/word.json/";
 var word = "rainbow";
@@ -24,5 +24,3 @@ function gotData(data) {
 function draw() {
   
 }
-
-//try replacing a word from a static text with synonyms. or antonyms.
