@@ -1,5 +1,7 @@
+//by daniel shiffman
+
 var api = "http://api.giphy.com/v1/gifs/search?";
-var apiKey = "&api_key=dc6zaTOxFJmzC";
+var apiKey = "&api_key={your api key here}";
 var query = "&q=doge";
 
 
