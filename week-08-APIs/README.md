@@ -72,6 +72,36 @@ This changes the text of the HTML elements based on the results of the call.
 
 #### 02-wordnik
 
+This sketch by Daniel Shiffman looks for a starting word, and creates a link/anchor on the page with the contents of that word. Clicking on it will take the user to one of many potential related words by looking at the related words API result, getting a random result, and updating the link html.
+
+```
+function gotData(data) {
+  //this is called by loadJSON.
+  //the json object from the api will be put into variable "data"
+  var index1 = floor(random(0, data.length));  //data is an array. we want to look at one of the many possible array positions, so we choose a random one:
+  var index2 = floor(random(0, data[index1].words.length));
+  //finally that array position is an object that may have an array of words, so we choose a random one of those too:
+  word = data[index1].words[index2];
+  //update the link html element text:
+  link.html(word);
+}
+```
+
 #### 02a-wordnik
 
+This sketch starts with a long string, uses ```setInterval``` to automatically query the API, and replaces words with the results one at a time.
+
 #### 03-giphy
+
+This sketch by Daniel Shiffman gets the results from a giphy gif search.
+
+### Homework
+
+*Due next Sunday, 4/10, at midnight.*
+
+Use an API to make an experimental sketch.
+
+* If you're familiar with APIs, try ConceptNet. If not, base your code on one of the examples.
+* You could expand the functionality of one of the examples. Maybe create a weather app that gives you the weather wherever you click your mouse. Maybe something that translates text into themed gifs. Maybe a classical data visualization.
+* If you use ConceptNet or Wordnik, try a language-based piece where you play with the meanings of words. Try combining a previous approach with these APIs.
+

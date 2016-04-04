@@ -1,4 +1,4 @@
-
+//bma- code 2 SP 16
 
 var URIbase = "http://api.wordnik.com/v4/word.json/";
 var URIword = "";
