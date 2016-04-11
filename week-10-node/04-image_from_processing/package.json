@@ -1,0 +1,12 @@
+{
+  "name": "04-image_from_processing",
+  "version": "1.0.0",
+  "description": "posting an image from processing to twitter",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
+  "author": "Bryan Ma",
+  "license": "ISC"
+}

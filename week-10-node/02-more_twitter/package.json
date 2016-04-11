@@ -1,0 +1,12 @@
+{
+  "name": "02-more_twitter",
+  "version": "1.0.0",
+  "description": "scheduling tweets with set interval, more details",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
+  "author": "Bryan Ma",
+  "license": "ISC"
+}

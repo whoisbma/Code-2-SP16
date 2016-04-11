@@ -95,6 +95,10 @@ This sketch starts with a long string, uses ```setInterval``` to automatically q
 
 This sketch by Daniel Shiffman gets the results from a giphy gif search.
 
+#### Encoding URIs
+
+[encodeURI() information](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI) - will remove spaces and fix other problems in URIs.
+
 ### Homework
 
 *Due next Sunday, 4/10, at midnight.*

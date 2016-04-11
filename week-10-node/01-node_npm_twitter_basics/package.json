@@ -1,0 +1,15 @@
+{
+  "name": "01-node_npm_twitter_basics",
+  "version": "1.0.0",
+  "description": "demoing node, NPM, and twitter",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bryan Ma",
+  "license": "ISC",
+  "dependencies": {
+    "twit": "^2.2.3"
+  }
+}
