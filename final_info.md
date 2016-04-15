@@ -6,10 +6,10 @@ A completed dynamic new media work that:
 
 **1 - demonstrates proficiency in at least one major area of the course**
 
-* text analysis (regex, string methods)
-* text generation (regex,)
-* p5.js (for DOM or canvas)
-* APIs, datasets (conceptnet)
+* text analysis (regex, string methods, concordances, n-grams)
+* text generation (regex, markov chains, grammars, use of concept net, wordnik, etc.)
+* p5.js (for DOM or canvas or both)
+* APIs, datasets (conceptnet, wordnik, nytimes, weather, etc.)
 * server side JS (node, heroku, amazon)
 	
 **2 - demonstrates engagement with a major conceptual topic addressed in the course**
