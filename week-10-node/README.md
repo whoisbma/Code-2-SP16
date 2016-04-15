@@ -18,6 +18,12 @@ https://twitter.com/artassignbot
 
 https://twitter.com/Botston
 
+https://twitter.com/greatartbot
+
+https://twitter.com/pixelsorter
+
+https://twitter.com/on_kawara
+
 https://twitter.com/oliviataters
 http://www.wnyc.org/story/29-olivia-taters-robot-teenager/
 
