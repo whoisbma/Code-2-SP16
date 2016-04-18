@@ -1,12 +1,6 @@
 var Twit = require('twit');
 
-// var T = new Twit({
-// consumer_key:			"60mtoRYeiiKYJ3aKQwo1oV4NM",
-// consumer_secret:		"meKWPq29jzrBnY19bOFsodjh34QIPfpJ2TpZeU6QhovlSayjaJ",
-// access_token:			"41247960-wDgq5RSyWHBg6r9wq4syP6OZHIbL4lpYsGfQvdNKv",
-// access_token_secret:	"rJH6zWn1SgVToG7KpYlpI7pJTgzJBKtkJIZLQQT4DonK8",
-// timeout_ms:				60*1000,	//optional HTTP request timeout
-// });
+
 
 var config = require('./config');
 var T = new Twit(config);
